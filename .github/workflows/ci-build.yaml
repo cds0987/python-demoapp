@@ -15,6 +15,10 @@ jobs:
   test:
     name: 'Tests & Linting'
     runs-on: ubuntu-latest
+    permissions:
+      checks: write        # ← cho phép tạo check runs
+      pull-requests: write # ← cho phép comment lên PR
+      contents: read       # ← cho phép đọc code
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v4
